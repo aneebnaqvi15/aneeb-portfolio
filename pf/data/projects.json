@@ -1,0 +1,68 @@
+{
+    "projects": [
+        {
+            "id": 8,
+            "title": "Fashion Brand Website",
+            "description": "Clone version of (Sapphire)! 🌐 It's fully responsive and dynamic, complete with functional sub-categories for seamless navigation.",
+            "image": "/portfoliov2/images/SC.png",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "HTML, CSS, JavaScript,React"
+        },
+        {
+            "id": 7,
+            "title": "Web Scraper",
+            "description": "Introducing an advanced web scraping tool built with JavaScript and Puppeteer. Perfect for researchers, marketers, and analysts, this solution offers:\r\n✅ No API Limits : Extract unlimited tweets with 98% accuracy.\r\n✅ Flexible Filters : Search by hashtag, date range, location, and more.\r\n✅ Comprehensive Insights : Collect tweet content, user details, and engagement metrics.\r\n🔒 Ethical & Secure : Designed for responsible data extraction with session-based login and error recovery.",
+            "image": "/portfoliov2/pf/images/Home.jpg",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "puppeter, js"
+        },
+        {
+            "id": 3,
+            "title": "Restaurant Management System",
+            "description": "A complete solution for restaurant operations and order management.",
+            "image": "/portfoliov2/pf/images/ss.jpg",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "Django, HTML, CSS, JavaScript, Tailwind"
+        },
+        {
+            "id": 4,
+            "title": "Food App",
+            "description": "A web app for food meal planer and recipe planner.",
+            "image": "/portfoliov2/pf/images/food.png",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "HTML, CSS, JavaScript"
+        },
+        {
+            "id": 5,
+            "title": "NewsCaster Android App",
+            "description": "A news aggregation app that delivers personalized news content.",
+            "image": "/portfoliov2/pf/images/WhatsApp_Image_2024-11-01_at_20.55.16_4cb2c716.jpg",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "Android, Java, XML, Firebase"
+        },
+        {
+            "id": 6,
+            "title": "Portfolio Website",
+            "description": "A modern and responsive portfolio website showcasing my work.",
+            "image": "/portfoliov2/pf/images/screencapture-file-D-Portfolio-me-html-2024-12-18-11_41_53.png",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "HTML5, CSS3, JavaScript, GSAP"
+        },
+        {
+            "id": 1,
+            "title": "Event Registration System",
+            "description": "A comprehensive event registration platform built with modern web technologies.",
+            "image": "/portfoliov2/pf/images/event.png",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "HTML, CSS, JavaScript, Django"
+        },
+        {
+            "id": 2,
+            "title": "Job Portal",
+            "description": "An online job portal connecting employers with potential candidates.",
+            "image": "/portfoliov2/pf/images/screencapture-127-0-0-1-8000-2024-12-05-16_51_49.png",
+            "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
+            "technologies": "Django, HTML, CSS, JavaScript"
+        }
+    ]
+} 
