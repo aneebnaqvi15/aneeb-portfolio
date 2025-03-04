@@ -4,7 +4,7 @@ const projectsData = [
         "id": 8,
         "title": "NewsCaster Android App",
         "description": "Unlike traditional platforms, this app prioritizes security, user experience, and multiple layers of news authentication. 📰✨ Users can even submit news that, after authentication, can be published—because our users truly matter. A comprehensive news management system that enables reporters to submit news articles and facilitates a multi-level editorial review process.",
-        "image": "/portfoliov2/pf/images/WhatsApp_Image_2024-11-01_at_20.55.16_4cb2c716.jpg",
+        "image": "/portfolio-aneeb/pf/images/WhatsApp_Image_2024-11-01_at_20.55.16_4cb2c716.jpg",
         "github": "https://github.com/aneebnaqvi15/NewsCaster",
         "technologies": "Android, Java, XML, Firebase"
         
@@ -13,7 +13,7 @@ const projectsData = [
         "id": 7,
         "title": "Tweet Scraper Bot",
         "description": "Introducing an advanced web scraping tool built with JavaScript and Puppeteer. Perfect for researchers, marketers, and analysts, this solution offers:\r\n✅ No API Limits : Extract unlimited tweets with 98% accuracy.\r\n✅ Flexible Filters : Search by hashtag, date range, location, and more.\r\n✅ Comprehensive Insights : Collect tweet content, user details, and engagement metrics.\r\n🔒 Ethical & Secure : Designed for responsible data extraction with session-based login and error recovery.",
-        "image": "/portfoliov2/pf/images/TS.jpg",
+        "image": "/portfolio-aneeb/pf/images/TS.jpg",
         "github": "https://github.com/aneebnaqvi15/TweetScraper",
         "technologies": "puppeter, js"
     },
@@ -21,7 +21,7 @@ const projectsData = [
         "id": 3,
         "title": "Restaurant Management System",
         "description": "A complete solution for restaurant operations and order management.",
-        "image": "/portfoliov2/pf/images/ss.jpg",
+        "image": "/portfolio-aneeb/pf/images/ss.jpg",
         "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
         "technologies": "Django, HTML, CSS, JavaScript, Tailwind"
     },
@@ -29,7 +29,7 @@ const projectsData = [
         "id": 4,
         "title": "Food App",
         "description": "A web app for food meal planer and recipe planner.",
-        "image": "/portfoliov2/pf/images/food.png",
+        "image": "/portfolio-aneeb/pf/images/food.png",
         "github": "https://github.com/aneebnaqvi15/Food-App",
         "technologies": "HTML, CSS, JavaScript"
     },
@@ -37,7 +37,7 @@ const projectsData = [
         "id": 2,
         "title": "Fashion Brand Website",
         "description": "Clone version of (Sapphire)! 🌐 It's fully responsive and dynamic, complete with functional sub-categories for seamless navigation.",
-        "image": "/portfoliov2/pf/images/SC.png",
+        "image": "/portfolio-aneeb/pf/images/SC.png",
         "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
         "technologies": "HTML, CSS, JavaScript,React"
     },
@@ -45,7 +45,7 @@ const projectsData = [
         "id": 6,
         "title": "Portfolio Website",
         "description": "A modern and responsive portfolio website showcasing my work.",
-        "image": "/portfoliov2/pf/images/portfolio.jpg",
+        "image": "/portfolio-aneeb/pf/images/portfolio.jpg",
         "github": "https://github.com/aneebnaqvi15/portfolio-web-v02",
         "technologies": "HTML5, CSS3, JavaScript, GSAP"
     },
@@ -53,7 +53,7 @@ const projectsData = [
         "id": 1,
         "title": "Event Registration System",
         "description": "A comprehensive event registration platform built with modern web technologies.",
-        "image": "/portfoliov2/pf/images/event.png",
+        "image": "/portfolio-aneeb/pf/images/event.png",
         "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
         "technologies": "HTML, CSS, JavaScript, Django"
     },
@@ -61,7 +61,7 @@ const projectsData = [
         "id": 9,
         "title": "Job Portal",
         "description": "An online job portal connecting employers with potential candidates.A modern job portal built with Django and Tailwind CSS, designed to connect job seekers with employers efficiently.Job Seekers: Register, search for jobs, and apply directly through the platform.Employers: Register, post job listings, and manage applications from job seekers.",
-        "image": "/portfoliov2/pf/images/screencapture-127-0-0-1-8000-2024-12-05-16_51_49.png",
+        "image": "/portfolio-aneeb/pf/images/screencapture-127-0-0-1-8000-2024-12-05-16_51_49.png",
         "github": "https://github.com/aneebnaqvi15/MyportfolioV3",
         "technologies": "Django, HTML, CSS, JavaScript"
     },
@@ -69,7 +69,7 @@ const projectsData = [
         "id": 5,
         "title": "Tweet Scraper Web",
         "description": "A modern, feature-rich Twitter data collection and analysis dashboard built with Next.js and TypeScript.",
-        "image": "/portfoliov2/pf/images/TS.jpg",
+        "image": "/portfolio-aneeb/pf/images/TS.jpg",
         "github": "https://github.com/aneebnaqvi15/Scraper",
         "technologies": "NextJs,TypeScript,TailwindCss,FramerMotion, JavaScript"
     }
@@ -162,6 +162,14 @@ function createProjectElement(project, index) {
     let imageUrl = project.image;
     if (!imageUrl || imageUrl.trim() === '') {
         imageUrl = 'https://via.placeholder.com/400x300?text=Project+Preview';
+    }
+    
+    // If the image is a relative path, make it absolute for GitHub Pages
+    if (imageUrl.startsWith('/')) {
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        if (isGitHubPages && !imageUrl.startsWith('/portfolio-aneeb')) {
+            imageUrl = '/portfolio-aneeb' + imageUrl;
+        }
     }
     
     div.innerHTML = `
