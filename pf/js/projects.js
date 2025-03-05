@@ -192,4 +192,83 @@ function createProjectElement(project, index) {
     `;
     
     return div;
+}function setupNavigation() {
+    console.log('Setting up navigation controls');
+    const projectBubbles = document.querySelectorAll('.project-bubble');
+    const totalGroups = Math.ceil(projectBubbles.length / 3);
+    let currentGroup = 0;
+
+    // Use existing navigation elements
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const indicatorsContainer = document.querySelector('.navigation-indicators');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentGroup > 0) {
+                currentGroup--;
+                showProjectGroup(currentGroup);
+                updateNavigationIndicators(currentGroup, totalGroups);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentGroup < totalGroups - 1) {
+                currentGroup++;
+                showProjectGroup(currentGroup);
+                updateNavigationIndicators(currentGroup, totalGroups);
+            }
+        });
+    }
+
+    // Initial setup
+    showProjectGroup(0);
+    updateNavigationIndicators(0, totalGroups);
 }
+function updateNavigationIndicators(currentGroup, totalGroups) {
+    const indicatorsContainer = document.querySelector('.navigation-indicators');
+    if (!indicatorsContainer) return;
+
+    indicatorsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalGroups; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = `nav-indicator ${i === currentGroup ? 'active' : ''}`;
+        indicator.addEventListener('click', () => {
+            showProjectGroup(i);
+            updateNavigationIndicators(i, totalGroups);
+        });
+        indicatorsContainer.appendChild(indicator);
+    }
+}
+
+
+function showProjectGroup(groupIndex) {
+    const projectBubbles = document.querySelectorAll('.project-bubble');
+    const startIndex = groupIndex * 3;
+    const endIndex = startIndex + 3;
+
+    projectBubbles.forEach((bubble, index) => {
+        if (index >= startIndex && index < endIndex) {
+            bubble.classList.remove('hidden');
+            bubble.classList.add('active');
+            // Add entrance animation
+            gsap.fromTo(bubble, 
+                { opacity: 0, y: 20 }, 
+                { opacity: 1, y: 0, duration: 0.5, ease: "back.out", delay: (index - startIndex) * 0.2 }
+            );
+        } else {
+            bubble.classList.add('hidden');
+            bubble.classList.remove('active');
+        }
+    });
+
+    // Update button states
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const totalGroups = Math.ceil(projectBubbles.length / 3);
+
+    if (prevBtn) prevBtn.disabled = groupIndex === 0;
+    if (nextBtn) nextBtn.disabled = groupIndex === totalGroups - 1;
+}
+
